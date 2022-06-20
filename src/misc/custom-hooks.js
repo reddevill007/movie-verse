@@ -1,5 +1,5 @@
 import { act } from 'react-dom/test-utils';
-import { useReducer, useEffect } from 'reacts';
+import { useReducer, useEffect } from 'react';
 
 function showReducer(prevState, action) {
     switch (action.type) {
