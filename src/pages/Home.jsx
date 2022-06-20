@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import MainpageLayout from '../components/MainpageLayout'
 import { apiGet } from '../misc/config';
 import ShowGrid from '../components/show/ShowGrid'
@@ -10,6 +10,13 @@ const Home = () => {
     const [searchOptions, setSearchOptions] = useState('shows');
 
     const isShowsSearch = searchOptions === 'shows';
+
+    // useEffect(() => {
+    //     console.log("useEffect run")
+    //     return () => {
+    //         console.log("Exit")
+    //     }
+    // }, [input])
 
     const onInputChange = (ev) => {
         setInput(ev.target.value);
@@ -46,9 +53,6 @@ const Home = () => {
     const onRadioChange = (ev) => {
         setSearchOptions(ev.target.value)
     }
-
-    console.log(searchOptions)
-
     return (
         <MainpageLayout>
             <input type="text" placeholder='Search for something' onChange={onInputChange} onKeyDown={onKeyDown} value={input} />
